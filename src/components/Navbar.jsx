@@ -1,45 +1,73 @@
 "use client";
+
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { FiHome, FiClock, FiPieChart } from "react-icons/fi";
+import { FiHome, FiClock } from "react-icons/fi";
 
 export default function Navbar() {
   const pathname = usePathname();
 
+  const isActive = (path) => pathname === path;
+
   return (
-    <nav className="bg-white border-b py-4">
-      <div className="max-w-6xl mx-auto px-4 flex justify-between items-center">
+    <nav className="bg-white border-b border-gray-200">
+      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         
-        {/* logo */}
-        <Link href="/">
-          <Image src="/assets/logo.png" alt="KeenKeeper" width={150} height={40} />
+        <Link href="/" className="flex items-center gap-1">
+          <span className="text-2xl font-bold text-[#111827]">Keen</span>
+          <span className="text-2xl font-bold text-[#244D3F]">Keeper</span>
         </Link>
 
-        {/* right side links */}
-        <div className="flex gap-4 md:gap-6 items-center text-sm md:text-base">
+        <div className="flex items-center gap-2 md:gap-6">
           <Link
             href="/"
-            className={pathname === "/" ? "flex items-center gap-2 bg-[#214D38] text-white px-4 py-2 rounded-md font-medium" : "flex items-center gap-2 text-gray-600 hover:text-[#214D38] font-medium"}
+            className={`flex items-center gap-2 px-4 py-2 rounded-md font-medium transition ${
+              isActive("/")
+                ? "bg-[#244D3F] text-white"
+                : "text-gray-500 hover:text-gray-900"
+            }`}
           >
-            <FiHome /> Home
+            <FiHome className="text-lg" />
+            <span className="hidden sm:inline">Home</span>
           </Link>
-          
+
           <Link
             href="/timeline"
-            className={pathname === "/timeline" ? "flex items-center gap-2 bg-[#214D38] text-white px-4 py-2 rounded-md font-medium" : "flex items-center gap-2 text-gray-600 hover:text-[#214D38] font-medium"}
+            className={`flex items-center gap-2 px-4 py-2 rounded-md font-medium transition ${
+              isActive("/timeline")
+                ? "bg-[#244D3F] text-white"
+                : "text-gray-500 hover:text-gray-900"
+            }`}
           >
-            <FiClock /> Timeline
+            <FiClock className="text-lg" />
+            <span className="hidden sm:inline">Timeline</span>
           </Link>
-          
+
           <Link
             href="/stats"
-            className={pathname === "/stats" ? "flex items-center gap-2 bg-[#214D38] text-white px-4 py-2 rounded-md font-medium" : "flex items-center gap-2 text-gray-600 hover:text-[#214D38] font-medium"}
+            className={`flex items-center gap-2 px-4 py-2 rounded-md font-medium transition ${
+              isActive("/stats")
+                ? "bg-[#244D3F] text-white"
+                : "text-gray-500 hover:text-gray-900"
+            }`}
           >
-            <FiPieChart /> Stats
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M3 3v18h18" />
+              <path d="m19 9-5 5-4-4-3 3" />
+            </svg>
+            <span className="hidden sm:inline">Stats</span>
           </Link>
         </div>
-
       </div>
     </nav>
   );
