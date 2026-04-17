@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Amir",
+    "picture": "/assets/amir.jpg",
+    "days_since_contact": 62,
+    "tags": ["WORK"],
+    "status": "Almost Due"
+  },
+  {
+    "id": 2,
+    "name": "Anika",
+    "picture": "/assets/Anika.jpg",
+    "days_since_contact": 45,
+    "tags": ["FAMILY"],
+    "status": "Overdue"
+  },
+  {
+    "id": 3,
+    "name": "Dipu",
+    "picture": "/assets/dipu.jpg",
+    "days_since_contact": 12,
+    "tags": ["WORK"],
+    "status": "On Track"
+  },
+  {
+    "id": 4,
+    "name": "Rahul",
+    "picture": "/assets/Rahul.jpg",
+    "days_since_contact": 80,
+    "tags": ["HOBBY", "TRAVEL"],
+    "status": "Overdue"
+  },
+  {
+    "id": 5,
+    "name": "Sara",
+    "picture": "/assets/Sara.jpg",
+    "days_since_contact": 25,
+    "tags": ["FAMILY"],
+    "status": "Almost Due"
+  },
+  {
+    "id": 6,
+    "name": "Taniya",
+    "picture": "/assets/Taniya.jpg",
+    "days_since_contact": 5,
+    "tags": ["WORK"],
+    "status": "On Track"
+  }
+]
